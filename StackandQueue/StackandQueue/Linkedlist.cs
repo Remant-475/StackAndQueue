@@ -39,6 +39,20 @@ namespace StackandQueue
                 Head = Head.next;
             }
         }
+        public void AppendNode(Node node)
+        {
+            if (Head == null && Tail == null)
+            {
+                Head = node;
+                Tail = node;
+            }
+            else
+            {
+                Tail.next = node;
+                Tail = node;
+            }
+
+        }
 
         public void Display()
         {
@@ -49,7 +63,7 @@ namespace StackandQueue
             }
             else
             {
-                Console.WriteLine("Following Stacks");
+                Console.WriteLine("Following Stacks.");
 
             }
             while (temp != null)
