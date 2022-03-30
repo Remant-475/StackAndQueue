@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StackandQueue
 {
@@ -15,6 +19,10 @@ namespace StackandQueue
             stack.Push(node_2);
             stack.Push(node_3);
             stack.DisplayStack();
+
+            stack.Pop();
+            stack.DisplayStack();
         }
+
     }
 }

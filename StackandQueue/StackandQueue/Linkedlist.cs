@@ -6,54 +6,63 @@ using System.Threading.Tasks;
 
 namespace StackandQueue
 {
-    internal class Linkedlist
+    public class LinkedList
     {
-        
-        
-            public Node Head;
-            public Node Tail;
+        public Node Head;
+        public Node Tail;
 
 
-            public Linkedlist()
+        public LinkedList()
+        {
+            Head = null;
+            Tail = null;
+        }
+        public void AddNode(Node node)
+        {
+            if (Head == null && Tail == null)
             {
-                Head = null;
-                Tail = null;
+                Head = node;
+                Tail = node;
             }
-            public void AddNode(Node node)
+            else
             {
-                if (Head == null && Tail == null)
-                {
-                    Head = node;
-                    Tail = node;
-                }
-                else
-                {
-                    node.next = Head;
-                    Head = node;
-                }
-            }
-            public void Display()
-            {
-                Node temp = Head;
-                if (temp == null)
-                {
-                    Console.WriteLine("empty");
-                }
-                else
-                {
-                    Console.WriteLine("Stack as follows");
-
-                }
-                while (temp != null)
-                {
-                    Console.Write(temp.data);
-                    if (temp.next != null)
-                    {
-                        Console.WriteLine("");
-                    }
-                    temp = temp.next;
-                }
+                node.next = Head;
+                Head = node;
             }
         }
-    }
 
+        public void DeleteNode()
+        {
+            while (Head != null)
+            {
+                Console.WriteLine("pop = {0}", Head.data);
+                Head = Head.next;
+            }
+        }
+
+        public void Display()
+        {
+            Node temp = Head;
+            if (temp == null)
+            {
+                Console.WriteLine("empty");
+            }
+            else
+            {
+                Console.WriteLine("Following Stacks");
+
+            }
+            while (temp != null)
+            {
+                Console.Write(temp.data);
+                if (temp.next != null)
+                {
+                    Console.WriteLine("");
+                }
+                temp = temp.next;
+            }
+
+
+        }
+    }
+}

@@ -8,14 +8,21 @@ namespace StackandQueue
 {
     class Stack
     {
-        Linkedlist linkedList;
+        LinkedList linkedList;
         public Stack()
         {
-            linkedList = new Linkedlist();
+            linkedList = new LinkedList();
         }
         public void Push(Node node)
         {
             linkedList.AddNode(node);
+        }
+
+        public void Pop()
+        {
+            Console.WriteLine("");
+            linkedList.DeleteNode();
+
         }
         public void DisplayStack()
         {
